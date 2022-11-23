@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Handwriting-1';
+  src: local('Handwriting-1'),
+    url(./fonts/Handwriting-1.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Handwriting-2';
+  src: local('Handwriting-2'),
+    url(./fonts/Handwriting-2.ttf) format('truetype');
+}

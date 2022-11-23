@@ -1,0 +1,47 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: handwriting-1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+@font-face {
+  font-family: 'Handwriting-1';
+  src: local('Handwriting-1'),
+    url(./fonts/Handwriting-1.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Handwriting-2';
+  src: local('Handwriting-2'),
+    url(./fonts/Handwriting-2.ttf) format('truetype');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  background-color: #F4F3EE;
+  color: #121212;
+  font-family: Handwriting-1;
+
+
+
+  /* background-color: #121212;
+  color: #F4F3EE; */
+}
+
+/* html,
+body {
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+} */

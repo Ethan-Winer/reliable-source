@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+p {
+  font-size: calc(25px + 1vmax);
+  text-align: right;
+  animation: fade-out linear 700ms 8s forwards;
+}
+
+
+span {
+  opacity: 0;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+  animation: text-enter 400ms forwards;
+}
+
+@keyframes text-enter {
+  from {
+    transform: translateY(0.5vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
