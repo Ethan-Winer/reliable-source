@@ -4,12 +4,15 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  animation: fade-out linear 1s 8s forwards;
+  position: absolute;
+  background-color: #F4F3EE;
 }
 
 p {
   font-size: calc(25px + 1vmax);
   text-align: right;
-  animation: fade-out linear 700ms 8s forwards;
+  /* animation: fade-out linear 700ms 8s forwards; */
 }
 
 
