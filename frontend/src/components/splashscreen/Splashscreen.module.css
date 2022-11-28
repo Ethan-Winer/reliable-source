@@ -1,0 +1,46 @@
+.div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  animation: fade-out linear 1s 8s forwards;
+  position: fixed;
+  background-color: #F4F3EE;
+}
+
+.p {
+  font-size: calc(25px + 1vmax);
+  text-align: right;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+.span {
+  opacity: 0;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+  animation: text-enter 400ms forwards;
+}
+
+@keyframes text-enter {
+  from {
+    transform: translateY(0.5vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

@@ -1,6 +1,7 @@
 import './App.css';
-import Splashscreen from './components/splashscreen/Splashscreen';
+// import Splashscreen from './components/splashscreen/Splashscreen';
 import { Component } from 'react';
+import Title from './components/title/Title';
 
 class App extends Component {
 
@@ -23,8 +24,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.showSplashscreen && <Splashscreen></Splashscreen>}
-        <h1>done</h1>
+        {/* {this.state.showSplashscreen && <Splashscreen />} */}
+        <Title />
       </div>
     );
   }
