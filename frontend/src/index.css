@@ -25,12 +25,17 @@ code {
     url(./fonts/Handwriting-2.ttf) format('truetype');
 }
 
+:root {
+  --black: #121212;
+  --white: #F4F3EE;
+}
+
 body {
   padding: 0;
   margin: 0;
 
-  background-color: #F4F3EE;
-  color: #121212;
+  background-color: var(--white);
+  color: var(--black);
   font-family: Handwriting-1;
 
 

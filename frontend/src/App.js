@@ -1,7 +1,8 @@
-import './App.css';
-// import Splashscreen from './components/splashscreen/Splashscreen';
+import Splashscreen from './components/splashscreen/Splashscreen';
 import { Component } from 'react';
 import Title from './components/title/Title';
+
+import style from './App.module.css';
 
 class App extends Component {
 
@@ -18,14 +19,17 @@ class App extends Component {
       this.setState({
         showSplashscreen: false
       });
-    }, 9000);
+    }, 10000);
   }
 
   render() {
     return (
-      <div>
-        {/* {this.state.showSplashscreen && <Splashscreen />} */}
-        <Title />
+      <div className={style.div}>
+        {/* {this.state.showSplashscreen && <Splashscreen />}
+        <Title /> */}
+
+        {this.state.showSplashscreen ? <Splashscreen /> : <Title />}
+        {/* <Title /> */}
       </div>
     );
   }
