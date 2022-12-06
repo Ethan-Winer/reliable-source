@@ -1,28 +1,28 @@
 .div {
   background-image: url('./blank.png');
   background-size: cover;
-  width: 60vh;
-  height: 60vh;
+  width: 60vmin;
+  height: 60vmin;
   filter: drop-shadow(10px 10px 3px rgba(0, 0, 0, 0.3));
-  padding: 4vh;
+  padding: 4vmin;
   margin: 4vmin;
   text-align: center;
-  transform-origin: 50% 4vh;
+  transform-origin: 50% 4vmin;
   /* animation: infinite ease-in-out wobble 2s; */
   opacity: 0;
-  animation: title-enter linear 700ms 1000ms forwards, wobble ease-in-out 6s 1500ms;
+  animation: title-enter linear 600ms 1000ms forwards, wobble ease-in-out 6s 1500ms;
 }
 
 .h1 {
-  font-size: 7vh
+  font-size: 7vmin
 }
 
 .p {
-  font-size: 5vh;
+  font-size: 5vmin;
 }
 
 .img {
-  width: 7vh;
+  width: 8vmin;
   position: absolute;
   /* margin-top: 2vh;
   margin-right: 2vh; */
@@ -44,8 +44,10 @@
   z-index: 2;
   display: fixed;
   align-items: flex-end;
-  margin-left: calc(4vmin + 31vh);
-  margin-top: calc(4vmin + 3vh);
+  /* margin-left: calc(6vmin + 31vmin);
+  margin-top: calc(6vmin + 3vmin); */
+  margin-top: 8vmin;
+  margin-left: 36vmin;
   /* height: 6.5vh; */
   /* overflow: hidden; */
   /* margin-bottom: -2vh; */
@@ -62,11 +64,11 @@
 
   width: 0;
   height: 0;
-  border-top: 2vh solid transparent;
-  border-right: 2vh solid transparent;
+  border-top: 2vmin solid transparent;
+  border-right: 2vmin solid transparent;
   z-index: 1;
-  border-left: 2vh solid var(--white);
-  border-bottom: 2vh solid var(--white);
+  border-left: 2vmin solid var(--white);
+  border-bottom: 2vmin solid var(--white);
   /* border-left: 2vh solid green;
   border-bottom: 2vh solid green; */
 
@@ -98,7 +100,7 @@
 
 @keyframes title-enter {
   from {
-    transform: translateX(-50vmax);
+    transform: translateX(-200vmin);
     opacity: 0;
   }
 

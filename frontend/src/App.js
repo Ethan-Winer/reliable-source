@@ -3,6 +3,8 @@ import { Component } from 'react';
 import Title from './components/title/Title';
 
 import style from './App.module.css';
+import React from 'react';
+import Facts from './components/facts/Facts';
 
 class App extends Component {
 
@@ -28,8 +30,10 @@ class App extends Component {
         {/* {this.state.showSplashscreen && <Splashscreen />}
         <Title /> */}
 
-        {this.state.showSplashscreen ? <Splashscreen /> : <Title />}
+        {/* {this.state.showSplashscreen ? <Splashscreen /> : <Title />} */}
         {/* <Title /> */}
+        <Facts />
+
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import style from './Title.module.css'
 import thumbtack from './thumbtack.png'
 
