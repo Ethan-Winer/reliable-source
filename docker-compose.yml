@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  rs-frontend:
+    build: ./frontend
+    container_name: rs-frontend
+    # image: rs-frontend
+    depends_on:
+      - rs-backend
+    ports:
+      - 3000:3000
+
+  rs-backend:
+    build: ./backend
+    container_name: rs-backend
+    ports:
+      - 5000:5000
+  rs-reverse-proxy:
+    build: ./reverse-proxy
+    container_name: rs-reverse-proxy
+    depends_on:
+      - rs-frontend
+      - rs-backend
+    ports:
+      - 80:80

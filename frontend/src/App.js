@@ -27,13 +27,18 @@ class App extends Component {
   render() {
     return (
       <div className={style.div}>
-        {/* {this.state.showSplashscreen && <Splashscreen />}
-        <Title /> */}
 
-        {/* {this.state.showSplashscreen ? <Splashscreen /> : <Title />} */}
-        {/* <Title /> */}
+
+        {/* {this.state.showSplashscreen ? <Splashscreen /> : (
+          <div className={style.div}>
+
+            <Title />
+            <Facts />
+          </div>
+
+        )} */}
+        <Title></Title>
         <Facts />
-
       </div>
     );
   }

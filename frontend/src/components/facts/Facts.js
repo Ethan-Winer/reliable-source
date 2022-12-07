@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import style from './Facts.module.css';
 
 class Facts extends Component {
   constructor(props) {
@@ -6,33 +7,73 @@ class Facts extends Component {
 
     this.state = {
       index: 0,
-      facts: ['zero', 'one', 'two', 'three']
+      // facts: ['zero', 'one', 'two', 'three']
+      facts: [{ fact: 'test' }, { fact: 'test' }, { fact: 'test' }]
     }
   }
   componentDidMount() {
+    setTimeout(() => {
+      setInterval(() => this.incrementIndex(), 2000);
+      // if (this.state.index = this.state.facts.length - 1) {
+      //   fetch('/get-facts')
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //       facts.push(data);
+      //     })
+      // }
 
-    setInterval(() => this.incrementIndex(), 500);
+    }, 2000);
+
   }
 
   incrementIndex() {
-    this.setState({
-      index: this.state.index + 1
-    });
-    if (this.state.index == this.state.facts.length - 1) {
+    // let newState = {
+    //   facts: this.state.facts,
+    //   index: this.state.index + 1
+    // }
 
+    if (this.state.index >= this.state.facts.length - 2) {
+      // if (true) {
+      fetch('/get-facts')
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data[0].fact);
+          // newState.facts = newState.facts.concat(data);
+          // console.log(newState);
+          // newState[
+          // console.log('facts: ' + this.state.facts);
+          this.setState({
+            facts: this.state.facts.concat(data),
+            index: this.state.index + 1
+          }, () => {
+
+            console.log(this.state);
+          });
+        });
     }
+    else {
+      this.setState({
+        index: this.state.index + 1
+      })
+    }
+
+
+    // for (let i = 0; i < this.state.index; i++) {
+    //   newState.facts.push(i);
+    // }
   }
-
-  getFacts() {
-
-  }
-
-
 
   render() {
     return (
-      <div>
-        {this.state.facts[this.state.index]}
+      // <div className={style.div}>
+      //   <p className={style.p}>
+      //     {this.state.facts[this.state.index]}
+      //   </p>
+      // </div>
+      <div className={style.container}>
+        <p className={style.p}>
+          {this.state.facts[this.state.index].fact}
+        </p>
       </div>
     )
   }
