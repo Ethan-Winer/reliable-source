@@ -1,0 +1,98 @@
+ .container {
+   width: 100vw;
+   height: 100vh;
+   position: absolute;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* background-color: rgba(0, 0, 0, 0); */
+   animation: containerEnter 250ms ease;
+   background-color: rgba(0, 0, 0, 0.6);
+
+   z-index: 3;
+ }
+
+ .formContainer {
+   width: 75vmin;
+   height: 75vmin;
+   /* margin: 10vh auto; */
+   /* transform: translateY(-100vh); */
+   animation: form-enter 600ms ease;
+   /* background-color: rgba(0, 0, 0, 0.5); */
+   background-image: url('./background.png');
+   background-size: cover;
+   padding: 5vmin;
+ }
+
+ .button {
+   background-color: transparent;
+   outline: none;
+   border: none;
+ }
+
+ .button:hover {
+   cursor: pointer;
+
+ }
+
+ .img {
+   width: 8vmin;
+ }
+
+ .textarea {
+   margin: auto;
+   margin-top: 5vmin;
+   padding: 2vmin;
+   width: 60vmin;
+   height: 30vmin;
+   display: block;
+   resize: none;
+   border: none;
+   outline: none;
+   /* background-color: rgba(0, 0, 0, 0.2); */
+   background-color: transparent;
+   font-size: 5vmin;
+   font-family: Handwriting-1;
+ }
+
+ .input {
+   width: 60vmin;
+   height: 10vmin;
+   padding: 2vmin;
+   margin: auto;
+
+
+   display: block;
+   border: none;
+   outline: none;
+   background-color: transparent;
+
+   font-size: 5vmin;
+   font-family: Handwriting-1;
+ }
+
+ .submit {}
+
+ @keyframes containerEnter {
+   from {
+     background-color: rgba(0, 0, 0, 0);
+   }
+
+   to {
+     background-color: rgba(0, 0, 0, 0.6);
+   }
+ }
+
+ @keyframes form-enter {
+
+   0%,
+   50% {
+     transform: translateY(-100vh);
+   }
+
+   to {
+     transform: translateY(0);
+   }
+
+ }

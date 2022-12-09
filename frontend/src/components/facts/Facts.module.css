@@ -21,7 +21,7 @@
   filter: drop-shadow(10px 10px 3px rgba(0, 0, 0, 0.3));
 
   opacity: 0;
-  animation: fact-animation ease 2s 2s infinite;
+  animation: fact-animation ease 8s 2s infinite;
 }
 
 @keyframes fact-animation {

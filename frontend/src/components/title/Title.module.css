@@ -78,6 +78,50 @@
   animation: hide-cover linear 0s 1.5s forwards;
 }
 
+
+.buttonContainer {
+  margin-top: 15vmin;
+}
+
+.postFactButton {
+  margin-right: 3vmin;
+  width: 18vmin;
+  height: 9vmin;
+  font-size: 5vmin;
+  font-size: 3vmin;
+  font-family: Handwriting-2;
+  transform: rotate(-3deg);
+
+  background-image: url('./blue-1.png');
+  background-size: cover;
+
+  outline: none;
+  background-color: transparent;
+  border: none;
+
+  transition: all ease 300ms;
+
+  /* animation: button-wobble linear 300ms infinite; */
+}
+
+.postFactButton:hover {
+  transform: translate(-1vmin, -1vmin) rotate(-8deg);
+  transition: all ease 300ms;
+  animation: post-button-wobble linear 300ms infinite;
+  cursor: pointer;
+}
+
+
+.createURLButton {
+  margin-left: 3vmin;
+  width: 18vmin;
+  height: 9vmin;
+  font-size: 3vmin;
+  font-family: Handwriting-2;
+  transform: translateY(20px) rotate(7deg);
+}
+
+
 @keyframes thumbtack-stick {
   0% {
     /* opacity: 0; */
@@ -140,4 +184,38 @@
   to {
     opacity: 1;
   }
+}
+
+@keyframes post-button-wobble {
+  0% {
+    /* background-image: url('./blue-0.png'); */
+    background-image: var(--blue-0)
+  }
+
+  25% {
+    /* background-image: url('./blue-1.png'); */
+    background-image: var(--blue-1);
+  }
+
+  50% {
+    /* background-image: url('./blue-2.png'); */
+    background-image: var(--blue-2);
+  }
+
+  75%,
+  100% {
+    /* background-image: url('./blue-3.png'); */
+    background-image: var(--blue-3)
+  }
+}
+
+@keyframes post-button-lift {
+  from {
+    transition: inherit;
+  }
+
+  to {
+    transform: translate(-1vmin, -1vmin) rotate(-8deg);
+  }
+
 }

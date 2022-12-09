@@ -8,12 +8,12 @@ class Facts extends Component {
     this.state = {
       index: 0,
       // facts: ['zero', 'one', 'two', 'three']
-      facts: [{ fact: 'test' }, { fact: 'test' }, { fact: 'test' }]
+      facts: [{ fact: "this website was made by Ethan Winer" }]
     }
   }
   componentDidMount() {
     setTimeout(() => {
-      setInterval(() => this.incrementIndex(), 2000);
+      setInterval(() => this.incrementIndex(), 8000);
       // if (this.state.index = this.state.facts.length - 1) {
       //   fetch('/get-facts')
       //     .then((response) => response.json())
@@ -23,8 +23,14 @@ class Facts extends Component {
       // }
 
     }, 2000);
+    // document.addEventListener('keydown', this.test);
 
   }
+
+  test() {
+    console.log('test');
+  }
+
 
   incrementIndex() {
     // let newState = {

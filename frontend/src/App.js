@@ -5,6 +5,7 @@ import Title from './components/title/Title';
 import style from './App.module.css';
 import React from 'react';
 import Facts from './components/facts/Facts';
+import FactForm from './components/fact-form/FactForm';
 
 class App extends Component {
 
@@ -12,8 +13,11 @@ class App extends Component {
     super(props)
 
     this.state = {
-      showSplashscreen: true
+      showSplashscreen: true,
+      showFactForm: false
     }
+
+    this.toggleFactForm = this.toggleFactForm.bind(this);
   }
 
   componentDidMount() {
@@ -24,12 +28,17 @@ class App extends Component {
     }, 10000);
   }
 
+  toggleFactForm() {
+    this.setState({
+      showFactForm: !this.state.showFactForm
+    })
+  }
   render() {
     return (
       <div className={style.div}>
-
-
-        {/* {this.state.showSplashscreen ? <Splashscreen /> : (
+        {this.state.showFactForm && <FactForm toggleFactForm={this.toggleFactForm}></FactForm>}
+        {/* 
+        {this.state.showSplashscreen ? <Splashscreen /> : (
           <div className={style.div}>
 
             <Title />
@@ -37,7 +46,7 @@ class App extends Component {
           </div>
 
         )} */}
-        <Title></Title>
+        <Title toggleFactForm={this.toggleFactForm}></Title>
         <Facts />
       </div>
     );

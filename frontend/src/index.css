@@ -28,6 +28,15 @@ code {
 :root {
   --black: #121212;
   --white: #F4F3EE;
+  font-family: Handwriting-1;
+
+
+  --blue-0: url('./components/title/blue-0.png');
+  --blue-1: url('./components/title/blue-1.png');
+  --blue-2: url('./components/title/blue-2.png');
+  --blue-3: url('./components/title/blue-3.png');
+
+
 }
 
 body {
@@ -42,6 +51,17 @@ body {
 
   /* background-color: #121212;
   color: #F4F3EE; */
+}
+
+
+/* using this to preload images */
+body::after {
+  content: var(--blue-0) var(--blue-1) var(--blue-2) var(--blue-3);
+  width: 0;
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+
 }
 
 /* html,
