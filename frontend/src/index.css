@@ -1,18 +1,3 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: handwriting-1;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 @font-face {
   font-family: 'Handwriting-1';
   src: local('Handwriting-1'),
@@ -36,7 +21,10 @@ code {
   --blue-2: url('./components/title/blue-2.png');
   --blue-3: url('./components/title/blue-3.png');
 
-
+  --red-0: url('./components/wiggle-button/background-images/red-0.png');
+  --red-1: url('./components/wiggle-button/background-images/red-1.png');
+  --red-2: url('./components/wiggle-button/background-images/red-2.png');
+  --red-3: url('./components/wiggle-button/background-images/red-3.png')
 }
 
 body {
@@ -46,27 +34,24 @@ body {
   background-color: var(--white);
   color: var(--black);
   font-family: Handwriting-1;
-
-
-
-  /* background-color: #121212;
-  color: #F4F3EE; */
 }
 
-
-/* using this to preload images */
 body::after {
-  content: var(--blue-0) var(--blue-1) var(--blue-2) var(--blue-3);
+  content:
+    var(--blue-0) var(--blue-1) var(--blue-2) var(--blue-3) var(--red-0) var(--red-1) var(--red-2) var(--red-3);
   width: 0;
   height: 0;
-  position: absolute;
   overflow: hidden;
+  position: absolute;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
 
 }
 
-/* html,
-body {
-  overflow-y: hidden;
-  width: 100%;
-  height: 100%;
-} */
+button:hover {
+  cursor: pointer;
+}

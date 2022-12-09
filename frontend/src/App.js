@@ -37,16 +37,16 @@ class App extends Component {
     return (
       <div className={style.div}>
         {this.state.showFactForm && <FactForm toggleFactForm={this.toggleFactForm}></FactForm>}
-        {/* 
-        {this.state.showSplashscreen ? <Splashscreen /> : (
+
+        {/* {this.state.showSplashscreen ? <Splashscreen /> : (
           <div className={style.div}>
 
-            <Title />
+            <Title toggleFactForm={this.toggleFactForm} />
             <Facts />
           </div>
-
         )} */}
-        <Title toggleFactForm={this.toggleFactForm}></Title>
+
+        <Title toggleFactForm={this.toggleFactForm} />
         <Facts />
       </div>
     );

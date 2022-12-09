@@ -1,0 +1,67 @@
+.blueButton,
+.redButton {
+  background-size: cover;
+  display: block;
+  margin: auto;
+  transition: transform ease 300ms;
+  font-size: 3vmin;
+  font-family: Handwriting-2;
+}
+
+.redButton {
+  background-image: var(--red-0);
+}
+
+.redButton:hover {
+  animation: redWobble 300ms infinite;
+  transform: translate(0.5vmin, -0.5vmin) rotate(2deg);
+  font-size: 3vmin;
+  font-family: Handwriting-2;
+}
+
+.blueButton {
+  background-image: var(--blue-0);
+}
+
+.blueButton:hover {
+  animation: blueWobble 300ms infinite;
+  transform: translate(-0.5vmin, -0.5vmin) rotate(-3deg);
+}
+
+@keyframes redWobble {
+  0% {
+    background-image: var(--red-0);
+  }
+
+  25% {
+    background-image: var(--red-1);
+  }
+
+  50% {
+    background-image: var(--red-2);
+  }
+
+  75%,
+  100% {
+    background-image: var(--red-3);
+  }
+}
+
+@keyframes blueWobble {
+  0% {
+    background-image: var(--blue-0);
+  }
+
+  25% {
+    background-image: var(--blue-1);
+  }
+
+  50% {
+    background-image: var(--blue-2);
+  }
+
+  75%,
+  100% {
+    background-image: var(--blue-3);
+  }
+}

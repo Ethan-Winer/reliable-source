@@ -72,7 +72,16 @@
    font-family: Handwriting-1;
  }
 
- .submit {}
+ .submit {
+   /* font-family: Handwriting-2; */
+   border: none;
+   outline: none;
+   background-color: transparent;
+   /* color: green; */
+
+   font-size: 3vmin;
+   font-family: Handwriting-2;
+ }
 
  @keyframes containerEnter {
    from {

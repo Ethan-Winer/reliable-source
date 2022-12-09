@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import style from './Title.module.css'
 import thumbtack from './thumbtack.png'
+import WiggleButton from '../wiggle-button/WiggleButton';
 
 class Title extends Component {
   constructor(props) {
@@ -9,17 +10,6 @@ class Title extends Component {
     this.state = {
       num: 1
     }
-  }
-
-  componentDidMount() {
-    // setInterval(() => {
-
-    //   this.setState({
-    //     num: (this.state.num + 1) % 2
-    //   }, () => {
-    //     console.log(this.state.num);
-    //   });
-    // }, 500);
   }
 
   render() {
@@ -33,8 +23,7 @@ class Title extends Component {
           <h1 className={style.h1}>reliable-source.org</h1>
           <p className={style.p}>the most reliable source on the internet</p>
           <div className={style.buttonContainer}>
-            <button className={style.postFactButton} onClick={this.props.toggleFactForm}>Post Fact</button>
-            {/* <button className={style.createURLButton}>Custom URL</button> */}
+            <WiggleButton onClick={this.props.toggleFactForm} width="18vmin" height="9vmin" color="blue">Post Fact</WiggleButton>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import style from './FactForm.module.css';
 import exitButtonImage from './exit-button.png';
+import WiggleButton from '../wiggle-button/WiggleButton';
 
 class FactForm extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class FactForm extends Component {
       exitingForm: false
     }
     this.exitForm = this.exitForm.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   exitForm() {
@@ -21,6 +23,25 @@ class FactForm extends Component {
     }, 600);
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    let fact = event.target.fact.value;
+    if (fact.length === 0) {
+      return;
+    }
+    let author = event.target.author.value;
+
+    let body = JSON.stringify({ author: author, fact: fact });
+    console.log(body);
+    fetch('/post-fact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: body
+    });
+
+    this.exitForm();
+  }
+
   render() {
     return (
       <div className={style.container} style={{ backgroundColor: this.state.exitingForm && 'rgba(0, 0, 0, 0)', transition: 'all 300ms 300ms ease' }}>
@@ -29,10 +50,10 @@ class FactForm extends Component {
             <img className={style.img} src={exitButtonImage} onClick={this.exitForm} alt="exit" />
           </button>
 
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <textarea type="text" name="fact" className={style.textarea} placeholder="type fact or quote here" maxLength="100" />
-            <input type="text" name="author" className={style.input} placeholder="type author here" />
-            <button type="submit">submit</button>
+            <input type="text" name="author" className={style.input} placeholder="type author here (optional)" maxLength="20" />
+            <WiggleButton className={style.wiggleButton} width="18vmin" height="9vmin" color="red">Submit</WiggleButton>
           </form>
         </div>
       </div>

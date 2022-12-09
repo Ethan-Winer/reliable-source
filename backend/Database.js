@@ -9,7 +9,7 @@ class Database {
     this.db.run(`CREATE TABLE IF NOT EXISTS approved_facts ${tableFormat}`);
     this.db.run(`CREATE TABLE IF NOT EXISTS pending_facts ${tableFormat}`);
     this.db.serialize()
-    for (let i = 0; i < 19; i++) {
+    for (let i = 0; i < 2; i++) {
       this.db.run("INSERT INTO approved_facts (fact, author) VALUES ('" + i + "', 'ethan')");
 
     }
@@ -43,6 +43,10 @@ class Database {
       this.db.run(`INSERT INTO approved_facts (date, ip, fact, author) VALUES (${row.date}, '${row.ip}', '${row.fact}', '${row.author}')`);
       this.db.run(`DELETE FROM pending_facts WHERE id = ${id}`);
     });
+  }
+
+  reject(id) {
+    this.db.run(`DELETE FROM pending_facts WHERE id = ${id}`);
   }
 }
 
