@@ -30,7 +30,7 @@ class FactForm extends Component {
       return;
     }
     let author = event.target.author.value;
-    if (author[0] !== '-') {
+    if (author.length !== 0 && author[0] !== '-') {
       author = '-' + author
     }
 

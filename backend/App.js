@@ -43,4 +43,8 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, './admin-panel/index.html'));
 });
 
+app.get('/get-all-facts', (req, res) => {
+  db.getAllFacts().then((facts) => res.send(facts));
+});
+
 app.listen(5000);

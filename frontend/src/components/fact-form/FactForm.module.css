@@ -53,7 +53,8 @@
    /* background-color: rgba(0, 0, 0, 0.2); */
    background-color: transparent;
    font-size: 5vmin;
-   font-family: Handwriting-1;
+   font-family: Handwriting;
+   font-weight: bold;
  }
 
  .input {
@@ -69,7 +70,8 @@
    background-color: transparent;
 
    font-size: 5vmin;
-   font-family: Handwriting-1;
+   font-family: Handwriting;
+   font-weight: bold;
  }
 
  .submit {
@@ -80,7 +82,8 @@
    /* color: green; */
 
    font-size: 3vmin;
-   font-family: Handwriting-2;
+   font-family: Handwriting;
+   font-weight: bold;
  }
 
  @keyframes containerEnter {

@@ -22,6 +22,8 @@
 
   opacity: 0;
   animation: fact-animation ease 8s 2s infinite;
+  transform: translate(100vw, 300px);
+  /* transition: transform 300ms; */
 }
 
 @keyframes fact-animation {

@@ -1,19 +1,26 @@
-@font-face {
+/* @font-face {
   font-family: 'Handwriting-1';
   src: local('Handwriting-1'),
     url(./fonts/Handwriting-1.ttf) format('truetype');
 }
-
+*/
 @font-face {
   font-family: 'Handwriting-2';
   src: local('Handwriting-2'),
     url(./fonts/Handwriting-2.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Handwriting';
+  src: local('Handwriting'),
+    url(./fonts/Handwriting.ttf) format('truetype');
+}
+
 :root {
   --black: #121212;
   --white: #F4F3EE;
-  font-family: Handwriting-1;
+  font-family: Handwriting;
+  font-weight: bold;
 
 
   --blue-0: url('./components/title/blue-0.png');
@@ -33,7 +40,7 @@ body {
 
   background-color: var(--white);
   color: var(--black);
-  font-family: Handwriting-1;
+  font-family: Handwriting;
 }
 
 body::after {

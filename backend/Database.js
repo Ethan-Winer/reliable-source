@@ -21,7 +21,9 @@ class Database {
 
   addFact(req) {
     let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-    this.db.run(`INSERT INTO pending_facts (date, ip, fact, author) VALUES (${Date.now()}, '${ip}', '${req.body.fact}', '${req.body.author}')`);
+    // this.db.run(`INSERT INTO pending_facts (date, ip, fact, author) VALUES (${Date.now()}, '${ip}', '${req.body.fact}', '${req.body.author}')`);
+    // console.log(req.body)
+    this.db.run('INSERT INTO pending_facts (date, ip, fact, author) VALUES ( ? , ? , ? , ?)', Date.now(), ip, req.body.fact, req.body.author)
     this.db.serialize();
   }
 
@@ -34,16 +36,32 @@ class Database {
   }
 
   approve(id) {
-    this.db.get(`SELECT * FROM pending_facts WHERE id = ${id}`, [], (err, row) => {
-      this.db.run(`INSERT INTO approved_facts (date, ip, fact, author) VALUES (${row.date}, '${row.ip}', '${row.fact}', '${row.author}')`);
-      this.db.run(`DELETE FROM pending_facts WHERE id = ${id}`);
+    // this.db.get(`SELECT * FROM pending_facts WHERE id = ${id}`, [], (err, row) => {
+    this.db.get('SELECT * FROM pending_facts WHERE id = ?', id, (err, row) => {
+      // this.db.run(`INSERT INTO approved_facts (date, ip, fact, author) VALUES (${row.date}, '${row.ip}', '${row.fact}', '${row.author}')`);
+      if (row === undefined) return;
+      this.db.run("INSERT INTO approved_facts (date, ip, fact, author) VALUES (?, ?, ?, ?)", row.date, row.ip, row.fact, row.author);
+      // this.db.run(`DELETE FROM pending_facts WHERE id = ${id}`);
+      this.db.run('DELETE FROM pending_facts WHERE id = ?', id);
+
       this.db.serialize();
     });
   }
 
   reject(id) {
-    this.db.run(`DELETE FROM pending_facts WHERE id = ${id}`);
+    // this.db.run(`DELETE FROM pending_facts WHERE id = ${id}`);
+    this.db.run('DELETE FROM pending_facts WHERE id = ?', id);
     this.db.serialize();
+  }
+
+  getAllFacts() {
+    return new Promise((resolve, reject) => {
+
+      this.db.all('SELECT * FROM approved_facts', [], (err, result) => {
+        resolve(result)
+      })
+
+    })
   }
 }
 
