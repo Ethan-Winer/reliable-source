@@ -3,3 +3,10 @@
   overflow: hidden;
   height: 100vh;
 }
+
+@media (max-aspect-ratio: 1.7/1) {
+
+  .div {
+    display: block;
+  }
+}

@@ -50,10 +50,7 @@ class Facts extends Component {
           // console.log('facts: ' + this.state.facts);
           this.setState({
             facts: this.state.facts.concat(data),
-            index: this.state.index + 1
-          }, () => {
-
-            console.log(this.state);
+            index: Math.min(this.state.index + 1, this.state.facts.length - 1)
           });
         });
     }
@@ -78,7 +75,8 @@ class Facts extends Component {
       // </div>
       <div className={style.container}>
         <p className={style.p}>
-          {this.state.facts[this.state.index].fact}
+          {this.state.facts[this.state.index].fact}<br />
+          {this.state.facts[this.state.index].author}
         </p>
       </div>
     )

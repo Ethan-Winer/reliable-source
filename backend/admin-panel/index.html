@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Controls</title>
+  <style>
+    div {
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+
+  </div>
+  <script>
+    const approve = (id) => {
+      fetch('/approve-fact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: id })
+      });
+    let e = document.querySelector(`#fact-${id}`);
+    e.style.display = 'none';
+
+    }
+
+    const reject = (id) => {
+      fetch('/reject-fact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: id })
+      });
+          let e = document.querySelector(`#fact-${id}`);
+    e.style.display = 'none';
+  
+    }
+
+    const factTemplate = (fact) => {
+      return `<div id="fact-${fact.id}">
+        <p>${fact.fact}</p>
+        <p>${fact.author}</p>
+        <button onClick="approve(${fact.id})">approve</button><button onClick="reject(${fact.id})">reject</button>
+      </div>`;
+    }
+
+    setInterval(() =>{
+      let out = '';
+      fetch('/get-pending')
+        .then((response) =>response.json())
+        .then((data) => {
+          data.forEach(fact => {
+            out += factTemplate(fact);
+          })
+          document.querySelector('body').innerHTML=out;
+        });
+       
+    }, 2000);
+    // let element = document.querySelector('body').innerHTML += factTemplate({fact:'test', author:'test author', id: 12}) ;
+    // element.append(factTemplate({fact:'test', author:'test author', id: 12}))
+  </script>
+</body>
+</html>

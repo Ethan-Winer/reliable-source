@@ -147,3 +147,13 @@
     opacity: 1;
   }
 }
+
+@media (max-aspect-ratio: 1.7/1) {
+
+  .container {
+    Width: 100vw;
+    height: 50vh;
+    display: block;
+    background-color: blue;
+  }
+}

@@ -1,5 +1,6 @@
 const express = require('express');
 const Database = require('./Database');
+const path = require('path');
 
 const db = new Database();
 
@@ -13,7 +14,6 @@ app.get('/get-facts', (req, res) => {
 });
 
 app.post('/post-fact', (req, res) => {
-  console.log(req.body);
   if (req.body.fact != undefined) {
     db.addFact(req);
     res.sendStatus(200);
@@ -37,6 +37,10 @@ app.post('/reject-fact', (req, res) => {
   let id = req.body.id;
   db.reject(id);
   res.sendStatus(200);
+});
+
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, './admin-panel/index.html'));
 });
 
 app.listen(5000);

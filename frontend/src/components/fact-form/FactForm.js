@@ -8,7 +8,7 @@ class FactForm extends Component {
     super(props);
 
     this.state = {
-      exitingForm: false
+      exitingForm: false,
     }
     this.exitForm = this.exitForm.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,9 +30,11 @@ class FactForm extends Component {
       return;
     }
     let author = event.target.author.value;
+    if (author[0] !== '-') {
+      author = '-' + author
+    }
 
     let body = JSON.stringify({ author: author, fact: fact });
-    console.log(body);
     fetch('/post-fact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
